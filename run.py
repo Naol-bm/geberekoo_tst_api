@@ -1,6 +1,6 @@
 import uvicorn
 
-isOnProduction = False
+isOnProduction = True
 
 # run with python3 index.py
 if __name__ == "__main__":
