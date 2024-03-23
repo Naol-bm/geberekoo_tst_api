@@ -27,10 +27,13 @@ def promptText(plant_name):
     common_name: Provide common name of the plant
     
     genus: Provide its genus of the plant
+    
 
     scientific_name: Provide scientific name of the plant
 
     status: Respond with "red" if the plant is unhealthy, and "green" if it's healthy.
+
+    disease: The name of the disease if the plant is unhealthy else responde Healthy: Example: Rust, Healthy etc
 
     description: Offer a brief yet informative description of the plant species, highlighting its name and primary agricultural use.
 
@@ -44,7 +47,7 @@ def promptText(plant_name):
 
     Approach each response as though you're advising a fellow agricultural expert, offering actionable advice based on your deep understanding of plant pathology and agricultural best practices. Remember, the plant in question is a {plant_name}, and your expertise is crucial for its vitality and productivity in the agricultural sector.
 
-    !NOTICE: force your response to be in JSON
+    !NOTICE: force your response to be in JSON but make the value in MarkDown
     '''
 
     return messages
