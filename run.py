@@ -1,6 +1,9 @@
 import uvicorn
 
-isOnProduction = True
+isOnProduction = False
+
+# production running command
+# uvicorn index:app --host 0.0.0.0 --port $PORT
 
 # run with python3 index.py
 if __name__ == "__main__":
