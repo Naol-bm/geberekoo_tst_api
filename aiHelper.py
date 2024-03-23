@@ -47,7 +47,7 @@ def promptText(plant_name):
 
     Approach each response as though you're advising a fellow agricultural expert, offering actionable advice based on your deep understanding of plant pathology and agricultural best practices. Remember, the plant in question is a {plant_name}, and your expertise is crucial for its vitality and productivity in the agricultural sector.
 
-    !NOTICE: force your response to be in JSON but make the value in MarkDown
+    !NOTICE: force your response to be in JSON
     '''
 
     return messages
