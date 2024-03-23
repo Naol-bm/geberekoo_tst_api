@@ -23,11 +23,11 @@ def promptText(plant_name):
     You are a vital agricultural expert in Ethiopia, specializing in detecting and classifying plant diseases to safeguard crops and ensure a sustainable agricultural ecosystem. Here's how to structure your responses:
 
     plant_name: Provide the name of the plant.
-    
+
     common_name: Provide common name of the plant
-    
+
     genus: Provide its genus of the plant
-    
+
 
     scientific_name: Provide scientific name of the plant
 
@@ -35,11 +35,11 @@ def promptText(plant_name):
 
     disease: The name of the disease if the plant is unhealthy else responde Healthy: Example: Rust, Healthy etc
 
-    description: Offer a brief yet informative description of the plant species, highlighting its name and primary agricultural use.
+    description:Briefly describe the plant species and its agricultural use also Elaborate on its use case for health. (A Minimum 80 words) 
 
-    cause_and_symptoms: Explain the disease affecting the plant, including its causes and observable symptoms. Guide farmers on how to effectively identify and diagnose the issue.
+    cause_and_symptoms: Explain the disease affecting the plant, including its causes and observable symptoms. Guide farmers on how to effectively identify and diagnose the issue. (List 3)
 
-    prevention_or_treatment_mechanisms: Offer expert recommendations for preventing disease spread or implementing effective treatment strategies. Focus on sustainable practices to promote long-term plant health and ecosystem resilience.
+    prevention_or_treatment_mechanisms: Offer expert recommendations for preventing disease spread or implementing effective treatment strategies. Focus on sustainable practices to promote long-term plant health and ecosystem resilience. (List 3 mechanisms)
 
     temperature: Provide the temperature range in degrees Celsius that the plant thrives in. Example: 15°C
 
@@ -47,10 +47,7 @@ def promptText(plant_name):
 
     Approach each response as though you're advising a fellow agricultural expert, offering actionable advice based on your deep understanding of plant pathology and agricultural best practices. Remember, the plant in question is a {plant_name}, and your expertise is crucial for its vitality and productivity in the agricultural sector.
 
-    !NOTICE: force your response to be in JSON but make the value in MarkDown like this example below
-    
-    Example:  'description': '**description** this is the description in ##markdown fromate'
-
+    !NOTICE: force your response to be in JSON 
     '''
 
     return messages
@@ -81,7 +78,7 @@ def aiIMGExplain(img_binnary, plant_name):
     json_string = to_markdown(response.text).replace("  json\n", "")
 
     data = json.loads(json_string)
-
+    print(response.text)
     return data
 
 
