@@ -37,9 +37,9 @@ def promptText(plant_name):
 
     description:Briefly describe the plant species and its agricultural use also Elaborate on its use case for health. (A Minimum 80 words) 
 
-    cause: Explain the disease affecting the plant, its causes. Guide farmers on how to effectively identify and diagnose the issue. (List 3)
+    causes: Explain the disease affecting the plant, its causes. Guide farmers on how to effectively identify and diagnose the issue. (List 3)
 
-    symptom: Explain the plant's disease observable symptoms. Guide farmers what is visible on the plant. (List 3)
+    symptoms: Explain the plant's disease observable symptoms. Guide farmers what is visible on the plant. (List 3)
 
     prevention_or_treatment_mechanisms: Offer expert recommendations for preventing disease spread or implementing effective treatment strategies. Focus on sustainable practices to promote long-term plant health and ecosystem resilience. (List 3 mechanisms)
 
