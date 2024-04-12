@@ -2,8 +2,13 @@ import google.generativeai as genai
 import textwrap
 import json
 
+import os
+from dotenv import load_dotenv
 
-GOOGLE_API_KEY = 'AIzaSyBFByRLa5J7K-h0dZXBtCvW_AptS46klqw'
+load_dotenv()
+
+GOOGLE_API_KEY = os.getenv('GEMINI_APIKEY')
+
 genai.configure(api_key=GOOGLE_API_KEY)
 
 
