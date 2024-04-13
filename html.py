@@ -1235,7 +1235,7 @@ video {
                   fill="currentColor"
                 ></path>
               </svg>
-              Report an Issue
+              Report
             </button>
             <button
               type="button"
