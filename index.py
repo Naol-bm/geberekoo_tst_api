@@ -1,8 +1,11 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+
 import base64
 
 from aiHelper import aiIMGExplain, aiTextExplain
+from html import contentHTML
 
 app = FastAPI()
 
@@ -34,3 +37,9 @@ async def upload_image(plant: str, file: UploadFile = File(...)):
 @app.post("/chat")
 async def upload_image(text: str, context: str):
     return aiTextExplain(text, context)
+
+
+@app.get("/status", response_class=HTMLResponse)
+async def backend_status():
+
+    return contentHTML
