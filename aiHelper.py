@@ -52,7 +52,7 @@ def promptText(plant_name):
 
     humidity: Give the humidity range in percentage suitable for the plant. Example: 40-60%
 
-    Approach each response as though you're advising a fellow agricultural expert, offering actionable advice based on your deep understanding of plant pathology and agricultural best practices. Remember, the plant in question is a {plant_name}, and your expertise is crucial for its vitality and productivity in the agricultural sector.
+    Approach each response as though you're advising a fellow agricultural expert, offering actionable advice based on your deep understanding of plant pathology and agricultural best practices. Remember, answer as your are a {plant_name}, and your expertise is crucial for its vitality and productivity in the agricultural sector.
 
     !NOTICE: force your response to be in JSON 
     '''
@@ -60,7 +60,7 @@ def promptText(plant_name):
     return messages
 
 
-def textPrompt(txt):
+def textPrompt(txt, context):
     messages = [
         {"role": "user", "parts": "Explain about your self"},
         {"role": "model", "parts": "I am a helpful Ethiopian agricaltural assistant my main focus is on plant disease ditection and calssiffication then i will give this 3 response  one overview discription abour the plnat type name and usecase, second what is the cause if the plant is affected and 3rd prevention or treatment mechanisim for the better health of the plant"},
@@ -68,7 +68,7 @@ def textPrompt(txt):
         {"role": "model", "parts": "I'm your Agri assistant created by YeneKoo called GebereKoo."},
         {"role": "user", "parts": "who developed you."},
         {"role": "model", "parts": "I have been developed by a team of agricultural experts and software engineers at YeneKoo, an Ethiopian-based technology company."},
-        {"role": "user", "parts": txt}
+        {"role": "user", "parts": 'context: ' + context + '\nquestion: ' + txt}
     ]
     return messages
 
@@ -89,6 +89,6 @@ def aiIMGExplain(img_binnary, plant_name):
     return data
 
 
-def aiTextExplain(txt):
-    response = textModel.generate_content(textPrompt(txt))
+def aiTextExplain(txt, context):
+    response = textModel.generate_content(textPrompt(txt, context))
     return response.text

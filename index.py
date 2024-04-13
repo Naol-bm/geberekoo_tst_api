@@ -18,7 +18,7 @@ app.add_middleware(
 
 
 @app.post("/upload-image")
-async def upload_image(file: UploadFile = File(...)):
+async def upload_image(plant: str, file: UploadFile = File(...)):
     # Read the file content
     contents = await file.read()
 
@@ -27,10 +27,10 @@ async def upload_image(file: UploadFile = File(...)):
 
     # Create a data URL for the image
     # data_url = f"data:image/png;base64,{img_data}"
-    return aiIMGExplain(img_data, 'plant')
+    return aiIMGExplain(img_data, plant)
     # return {"message": "Image saved successfully", 'img_data_url': data_url}
 
 
 @app.post("/chat")
-async def upload_image(text: str):
-    return aiTextExplain(text)
+async def upload_image(text: str, context: str):
+    return aiTextExplain(text, context)
